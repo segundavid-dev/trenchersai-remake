@@ -18,3 +18,21 @@ export interface OverviewCard {
   description: string;
   image: string;
 }
+
+/** Data for a feature in the bento grid. */
+export interface BentoFeature {
+  id: string;
+  title: string;
+  description: string;
+  stats: string[];
+  className: string;
+}
+
+/** Rank tier progression data. */
+export interface RankTier {
+  id: number;
+  name: string;
+  description: string;
+  accent: string;
+  glow: string;
+}
