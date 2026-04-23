@@ -45,23 +45,12 @@ export default function Ranks() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24 md:mb-32">
           <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-2 mb-6"
-            >
-              <span className="w-8 h-px bg-brand"></span>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand">Progression System</span>
-            </motion.div>
-            
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.05] tracking-tight text-white mb-6"
+              className="text-3xl md:text-5xl font-black uppercase leading-[1.05] tracking-tight text-white mb-6"
             >
               Climb the ranks.
               <br />
@@ -74,7 +63,7 @@ export default function Ranks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-lg text-white/40 max-w-md md:text-right border-l md:border-l-0 md:border-r border-white/[0.1] pl-6 md:pl-0 md:pr-6"
+            className="text-sm md:text-base text-white/40 max-w-md md:text-right border-l md:border-l-0 md:border-r border-white/[0.1] pl-6 md:pl-0 md:pr-6"
           >
             Every swap earns you Gold. Higher rank = bigger multiplier on everything you earn. Plus 5-tier referral commissions on every trade your network makes.
           </motion.p>

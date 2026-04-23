@@ -95,7 +95,7 @@ export default function ToolsBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-base md:text-lg text-white/40 max-w-2xl mx-auto"
+            className="text-sm md:text-base text-white/40 max-w-2xl mx-auto"
           >
             Everything you need to trade Solana memecoins with speed, safety,
             and an edge, nothing you don&apos;t.
