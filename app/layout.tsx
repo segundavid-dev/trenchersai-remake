@@ -10,9 +10,12 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "TrenchersAI — The Terminal That Never Sleeps",
+  title: "TrenchersAI | The Terminal That Never Sleeps",
   description:
     "Solana's fastest trading terminal. Snipe new token launches, copy whale wallets, and earn rewards on every trade.",
+  icons: {
+    icon: "/logo.avif",
+  },
 };
 
 export default function RootLayout({

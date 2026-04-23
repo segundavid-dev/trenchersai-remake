@@ -39,7 +39,6 @@ export default function CTA() {
               href="#enroll"
               variant="primary"
               size="lg"
-              className="px-10 py-4 text-base md:text-lg shadow-[0_0_40px_rgba(119,51,255,0.4)] hover:shadow-[0_0_60px_rgba(119,51,255,0.6)]"
             >
               Join Now
             </Button>

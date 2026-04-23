@@ -29,6 +29,17 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -58,6 +69,7 @@ export default function Navbar() {
             <a
               key={label}
               href={href}
+              onClick={(e) => handleScroll(e, href)}
               className="relative text-sm text-white/40 hover:text-white transition-colors duration-200 py-1 group"
             >
               {label}
@@ -69,7 +81,7 @@ export default function Navbar() {
         {/* ── Enroll CTA (desktop) ── */}
         <div className="hidden md:block">
           <Button href="#enroll" variant="primary" size="sm">
-            Enroll
+            Join Now
           </Button>
         </div>
 
@@ -116,7 +128,10 @@ export default function Navbar() {
             <a
               key={label}
               href={href}
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => {
+                setMobileOpen(false);
+                handleScroll(e, href);
+              }}
               className="text-sm text-white/50 hover:text-white transition-colors duration-200"
             >
               {label}
@@ -128,7 +143,7 @@ export default function Navbar() {
             size="sm"
             className="w-fit mt-1"
           >
-            Enroll
+            Join Now
           </Button>
         </div>
       </div>

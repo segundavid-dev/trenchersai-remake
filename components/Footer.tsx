@@ -4,6 +4,17 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { NewTwitterIcon, Linkedin02Icon } from "@hugeicons/core-free-icons";
 
 export default function Footer() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer className="relative w-full bg-[#030303] pt-20 pb-10 px-6 border-t border-white/[0.04] overflow-hidden">
       {/* Subtle bottom ambient glow */}
@@ -34,12 +45,12 @@ export default function Footer() {
               </h4>
               <ul className="flex flex-col gap-4">
                 <li>
-                  <a href="#overview" className="text-sm text-white/40 hover:text-white transition-colors">
+                  <a href="#overview" onClick={(e) => handleScroll(e, "#overview")} className="text-sm text-white/40 hover:text-white transition-colors">
                     Overview
                   </a>
                 </li>
                 <li>
-                  <a href="#benefits" className="text-sm text-white/40 hover:text-white transition-colors">
+                  <a href="#benefits" onClick={(e) => handleScroll(e, "#benefits")} className="text-sm text-white/40 hover:text-white transition-colors">
                     Benefits
                   </a>
                 </li>

@@ -77,7 +77,7 @@ const features: FeatureWithIcon[] = [
 
 export default function ToolsBento() {
   return (
-    <section id="tools" className="relative w-full py-32 bg-black">
+    <section id="benefits" className="relative w-full py-32 bg-black">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-24">
