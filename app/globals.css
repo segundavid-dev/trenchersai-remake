@@ -6,7 +6,7 @@
 
 @theme {
   /* Font */
-  --font-sans: var(--font-space-grotesk);
+  --font-sans: var(--font-manrope);
 
   /* Base palette */
   --color-bg: #000000;
@@ -89,8 +89,97 @@ body {
   animation: ticker-scroll 35s linear infinite;
 }
 
+/* ── Hero grid background ── */
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ── Dashboard animated border ── */
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.dashboard-border {
+  background: conic-gradient(
+    from var(--border-angle) at 50% 50%,
+    transparent 0%,
+    transparent 60%,
+    rgba(119, 51, 255, 0.4) 75%,
+    rgba(119, 51, 255, 0.7) 82%,
+    rgba(119, 51, 255, 0.4) 89%,
+    transparent 100%
+  );
+  animation: border-sweep 5s linear infinite;
+  box-shadow: 0 40px 100px -20px rgba(119, 51, 255, 0.15);
+}
+
+@keyframes border-sweep {
+  from {
+    --border-angle: 0deg;
+  }
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* ── Stat cell collapsed borders ── */
+
+.stat-cell {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin: -0.5px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Scan line on dashboard ── */
+
+@keyframes scan-line {
+  0% {
+    top: -2px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.scan-line-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line-effect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(119, 51, 255, 0.5),
+    transparent
+  );
+  animation: scan-line 5s ease-in-out infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+
 @theme inline {
-  --font-sans: var(--font-space-grotesk);
+  --font-sans: var(--font-manrope);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -204,8 +293,11 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+  }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-family: var(--font-manrope), system-ui, sans-serif;
   }
 }
