@@ -4,9 +4,9 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 const networks = [
-  { name: "Solana", src: "/sol-logo.avif", height: 28 },
-  { name: "Ethereum", src: "/eth-logo.avif", height: 32 },
-  { name: "Polygon", src: "/polygon.avif", height: 32 },
+  { name: "Solana", src: "/sol-logo.avif", height: 22 },
+  { name: "Ethereum", src: "/eth-logo.avif", height: 26 },
+  { name: "Polygon", src: "/polygon.avif", height: 26 },
 ];
 
 export default function Networks() {
@@ -31,7 +31,7 @@ export default function Networks() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.15 } },
           }}
-          className="flex flex-wrap items-center justify-center gap-12 md:gap-20"
+          className="flex flex-row items-center justify-center gap-6 md:gap-20"
         >
           {networks.map((net) => (
             <motion.div

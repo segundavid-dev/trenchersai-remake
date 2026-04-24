@@ -98,7 +98,7 @@ export default function Overview() {
                     </p>
 
                     <div className="mt-auto md:mt-0">
-                      <Button href="#enroll" variant="primary" size="md" className="w-fit">
+                      <Button href="/contact" variant="primary" size="md" className="w-full md:w-fit">
                         Join Now
                       </Button>
                     </div>

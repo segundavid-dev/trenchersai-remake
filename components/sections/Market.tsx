@@ -28,7 +28,7 @@ export default function Market() {
             Live prices, volume, holder count, and security scores for every Solana memecoin. See what&apos;s moving before CT catches on.
           </p>
           
-          <Button href="#enroll" variant="primary" size="lg">
+          <Button href="/contact" variant="primary" size="lg" className="w-full md:w-fit">
             Join Now
           </Button>
         </motion.div>

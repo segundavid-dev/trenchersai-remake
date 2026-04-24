@@ -34,11 +34,12 @@ export default function CTA() {
             with Trenchers. Stop watching whales eat, start trading with an edge.
           </p>
 
-          <div className="relative z-10">
+          <div className="relative z-10 w-full md:w-auto flex justify-center">
             <Button
-              href="#enroll"
+              href="/contact"
               variant="primary"
               size="lg"
+              className="w-full md:w-fit"
             >
               Join Now
             </Button>

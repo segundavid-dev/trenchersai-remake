@@ -101,18 +101,18 @@ export default function Hero() {
           className="mt-7 text-base sm:text-lg text-white/30 max-w-md leading-relaxed"
         >
           The terminal that doesn&apos;t sleep. Snipe launches, copy wallets,
-          and track every position&nbsp;— all in one place.
+          and track every position, all in one place.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
           variants={fadeUp}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-3"
+          className="mt-10 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto"
         >
-          <Button href="#enroll" variant="primary" size="lg">
+          <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-fit">
             Join Now
           </Button>
-          <Button href="#overview" variant="secondary" size="lg">
+          <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-fit">
             See how it works
           </Button>
         </motion.div>
@@ -120,7 +120,7 @@ export default function Hero() {
         {/* Stats strip */}
         <motion.div
           variants={fadeUp}
-          className="mt-14 inline-grid grid-cols-2 md:grid-cols-4"
+          className="mt-14 grid grid-cols-1 md:grid-cols-4 w-full md:w-auto"
         >
           {stats.map(({ value, label }) => (
             <div key={label} className="stat-cell px-5 py-4 md:px-8 md:py-5">
