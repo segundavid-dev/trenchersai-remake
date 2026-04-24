@@ -4,8 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
+import { motion } from "motion/react";
 import type { NavLink } from "@/types";
 
 const navLinks: NavLink[] = [
@@ -90,13 +89,24 @@ export default function Navbar() {
         {/* ── Mobile hamburger ── */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="md:hidden relative w-10 h-10 flex items-center justify-center cursor-pointer text-white/70 hover:text-white transition-colors"
+          className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer z-50"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
-          <HugeiconsIcon 
-            icon={mobileOpen ? Cancel01Icon : Menu01Icon} 
-            className="w-6 h-6" 
+          <motion.span
+            animate={mobileOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="w-7 h-[1.5px] bg-white block"
+          />
+          <motion.span
+            animate={mobileOpen ? { opacity: 0, x: 10 } : { opacity: 1, x: 0 }}
+            transition={{ duration: 0.2 }}
+            className="w-7 h-[1.5px] bg-white block"
+          />
+          <motion.span
+            animate={mobileOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="w-7 h-[1.5px] bg-white block"
           />
         </button>
       </div>

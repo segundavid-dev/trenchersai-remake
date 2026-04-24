@@ -2,6 +2,8 @@
 
 import { HugeiconsIcon } from "@hugeicons/react";
 import { NewTwitterIcon, Linkedin02Icon } from "@hugeicons/core-free-icons";
+import { Magnetic } from "@/components/ui/magnetic";
+import { motion } from "motion/react";
 
 export default function Footer() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -26,9 +28,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24">
           
           {/* Brand Info */}
-          <div className="flex flex-col max-w-xs">
-            <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-2">
-              Trenchers<span className="text-brand">AI</span>
+          <div className="flex flex-col max-w-xs group cursor-default">
+            <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-2 relative">
+              <span className="relative z-10">Trenchers<span className="text-brand">AI</span></span>
+              <span className="absolute inset-0 text-brand/20 blur-[2px] translate-x-[1px] translate-y-[1px] group-hover:animate-pulse pointer-events-none">TrenchersAI</span>
             </h3>
             <p className="text-sm font-medium text-white/40 tracking-wide uppercase">
               The Terminal that never sleeps
@@ -81,22 +84,26 @@ export default function Footer() {
           </p>
           
           <div className="flex items-center gap-4">
-            <a 
-              href="https://x.com/TrenchersAI" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/[0.2] hover:bg-white/[0.05] transition-all"
-            >
-              <HugeiconsIcon icon={NewTwitterIcon} className="w-4 h-4" />
-            </a>
-            <a 
-              href="https://www.linkedin.com/company/113394521" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/[0.2] hover:bg-white/[0.05] transition-all"
-            >
-              <HugeiconsIcon icon={Linkedin02Icon} className="w-5 h-5" />
-            </a>
+            <Magnetic strength={0.2}>
+              <a 
+                href="https://x.com/TrenchersAI" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/[0.2] hover:bg-white/[0.05] transition-all"
+              >
+                <HugeiconsIcon icon={NewTwitterIcon} className="w-4 h-4" />
+              </a>
+            </Magnetic>
+            <Magnetic strength={0.2}>
+              <a 
+                href="https://www.linkedin.com/company/113394521" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/[0.2] hover:bg-white/[0.05] transition-all"
+              >
+                <HugeiconsIcon icon={Linkedin02Icon} className="w-5 h-5" />
+              </a>
+            </Magnetic>
           </div>
         </div>
 

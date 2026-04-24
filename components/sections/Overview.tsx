@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { Magnetic } from "@/components/ui/magnetic";
 import type { OverviewCard } from "@/types";
 
 const cards: OverviewCard[] = [
@@ -98,9 +99,11 @@ export default function Overview() {
                     </p>
 
                     <div className="mt-auto md:mt-0">
-                      <Button href="/contact" variant="primary" size="md" className="w-full md:w-fit">
-                        Join Now
-                      </Button>
+                      <Magnetic className="w-full md:w-auto">
+                        <Button href="/contact" variant="primary" size="md" className="w-full md:w-fit">
+                          Join Now
+                        </Button>
+                      </Magnetic>
                     </div>
                   </div>
 

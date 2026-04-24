@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export default function CTA() {
   return (
@@ -35,14 +36,16 @@ export default function CTA() {
           </p>
 
           <div className="relative z-10 w-full md:w-auto flex justify-center">
-            <Button
-              href="/contact"
-              variant="primary"
-              size="lg"
-              className="w-full md:w-fit"
-            >
-              Join Now
-            </Button>
+            <Magnetic className="w-full md:w-auto">
+              <Button
+                href="/contact"
+                variant="primary"
+                size="lg"
+                className="w-full md:w-fit"
+              >
+                Join Now
+              </Button>
+            </Magnetic>
           </div>
         </div>
       </motion.div>

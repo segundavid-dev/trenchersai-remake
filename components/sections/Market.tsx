@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { MarketHUD } from "@/components/ui/market-hud";
 
 export default function Market() {
   return (
@@ -33,7 +33,7 @@ export default function Market() {
           </Button>
         </motion.div>
 
-        {/* Right: Image (45%) */}
+        {/* Right: Tactical HUD (45%) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -43,21 +43,9 @@ export default function Market() {
         >
           <div className="dashboard-border p-px shadow-2xl shadow-black relative group">
             
-            {/* The Image Wrapper */}
-            <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden bg-black scan-line-effect">
-              <Image
-                src="/market.jpg"
-                alt="Market Moves Real Time"
-                fill
-                className="object-cover object-center"
-              />
-              
-              {/* Overlay to dim the bright image (as requested) */}
-              <div className="absolute inset-0 bg-black/50 transition-opacity duration-700 group-hover:bg-black/30" />
-              
-              {/* Additional tactical gradient overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/20 to-transparent opacity-80" />
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(119,51,255,0.05)_0%,transparent_70%)] pointer-events-none" />
+            {/* The HUD Wrapper */}
+            <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden bg-black">
+              <MarketHUD />
             </div>
 
             {/* Corner Accents for Sharp UI */}

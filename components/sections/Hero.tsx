@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "motion/react";
+import { motion, type Variants, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 import Waves from "@/components/Waves";
 import { Button } from "@/components/ui/button";
 import { RotatingText } from "@/components/ui/rotating-text";
-import type { Stat } from "@/types";
+import { Magnetic } from "@/components/ui/magnetic";
+import { TerminalFeed } from "@/components/ui/terminal-feed";
 
 /* ── Animation variants ── */
 
@@ -33,27 +35,30 @@ const scaleIn: Variants = {
   },
 };
 
-/* ── Data ── */
-
-const stats: Stat[] = [
-  { value: "<2s", label: "Execution" },
-  { value: "15+", label: "Safety filters" },
-  { value: "MEV", label: "Protected" },
-  { value: "24/7", label: "Always live" },
-];
-
 const heroWords = ["whales", "degens", "snipers", "alphas"];
 
 /* ── Component ── */
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 12]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.2]);
+
   return (
     <section
       id="hero"
+      ref={containerRef}
       className="relative w-full min-h-screen overflow-hidden bg-black flex flex-col"
     >
       {/* Background composition */}
       <div className="pointer-events-none absolute inset-0 hero-grid" />
+      <TerminalFeed />
 
       <Waves
         lineColor="rgba(119, 51, 255, 0.10)"
@@ -109,35 +114,28 @@ export default function Hero() {
           variants={fadeUp}
           className="mt-10 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto"
         >
-          <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-fit">
-            Join Now
-          </Button>
-          <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-fit">
-            See how it works
-          </Button>
-        </motion.div>
-
-        {/* Stats strip */}
-        <motion.div
-          variants={fadeUp}
-          className="mt-14 grid grid-cols-1 md:grid-cols-4 w-full md:w-auto"
-        >
-          {stats.map(({ value, label }) => (
-            <div key={label} className="stat-cell px-5 py-4 md:px-8 md:py-5">
-              <p className="text-lg md:text-xl font-bold text-white tracking-tight">
-                {value}
-              </p>
-              <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/25 mt-1 font-medium">
-                {label}
-              </p>
-            </div>
-          ))}
+          <Magnetic className="w-full sm:w-auto">
+            <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-fit">
+              Join Now
+            </Button>
+          </Magnetic>
+          <Magnetic strength={0.2} className="w-full sm:w-auto">
+            <Button href="/contact" variant="secondary" size="lg" className="w-full sm:w-fit">
+              See how it works
+            </Button>
+          </Magnetic>
         </motion.div>
       </motion.div>
 
       {/* Dashboard preview */}
       <motion.div
         className="relative z-20 w-full max-w-5xl mx-auto px-6 pb-6"
+        style={{ 
+          perspective: "1200px",
+          rotateX,
+          scale,
+          opacity
+        }}
         variants={scaleIn}
         initial="hidden"
         animate="visible"

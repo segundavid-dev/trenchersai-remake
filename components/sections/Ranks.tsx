@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 import type { RankTier } from "@/types";
 
 const tiers: RankTier[] = [
@@ -35,8 +36,26 @@ const tiers: RankTier[] = [
 ];
 
 export default function Ranks() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Calculate parallax offsets for background numbers
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, -250]);
+  
+  const yOffsets = [y1, y2, y3, y4];
+
   return (
-    <section id="ranks" className="relative w-full py-32 bg-black overflow-hidden border-t border-white/[0.04]">
+    <section 
+      id="ranks" 
+      ref={containerRef}
+      className="relative w-full py-32 bg-black overflow-hidden border-t border-white/[0.04]"
+    >
       {/* Ambient background lines to give a grid/trench feel */}
       <div className="absolute inset-0 hero-grid opacity-30 pointer-events-none" />
 
@@ -99,10 +118,13 @@ export default function Ranks() {
                 }}
               />
 
-              {/* Massive faded background number */}
-              <div className="absolute top-4 right-4 text-[120px] font-black text-white/[0.02] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-white/[0.04]">
+              {/* Massive faded background number with Parallax */}
+              <motion.div 
+                style={{ y: yOffsets[i] }}
+                className="absolute top-4 right-4 text-[120px] font-black text-white/[0.02] leading-none pointer-events-none select-none transition-colors duration-500 group-hover:text-white/[0.04]"
+              >
                 0{tier.id}
-              </div>
+              </motion.div>
 
               {/* Content */}
               <div className="relative z-10 flex flex-col h-full mt-auto">
