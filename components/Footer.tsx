@@ -88,6 +88,7 @@ export default function Footer() {
                 href="https://x.com/TrenchersAI" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Follow us on X (Twitter)"
                 className="w-10 h-10 flex items-center justify-center border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/[0.2] hover:bg-white/[0.05] transition-all"
               >
                 <HugeiconsIcon icon={NewTwitterIcon} className="w-4 h-4" />
@@ -98,6 +99,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/113394521" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                aria-label="Connect with us on LinkedIn"
                 className="w-10 h-10 flex items-center justify-center border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/[0.2] hover:bg-white/[0.05] transition-all"
               >
                 <HugeiconsIcon icon={Linkedin02Icon} className="w-5 h-5" />

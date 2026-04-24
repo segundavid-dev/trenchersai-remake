@@ -55,6 +55,7 @@ export default function Hero() {
       id="hero"
       ref={containerRef}
       className="relative w-full min-h-screen overflow-hidden bg-black flex flex-col"
+      style={{ position: 'relative' }}
     >
       {/* Background composition */}
       <div className="pointer-events-none absolute inset-0 hero-grid" />
@@ -103,7 +104,7 @@ export default function Hero() {
         {/* Subheadline */}
         <motion.p
           variants={fadeUp}
-          className="mt-7 text-base sm:text-lg text-white/30 max-w-md leading-relaxed"
+          className="mt-7 text-base sm:text-lg text-white/50 max-w-md leading-relaxed"
         >
           The terminal that doesn't sleep. Snipe launches, copy wallets,
           and track every position, all in one place.
@@ -147,7 +148,8 @@ export default function Hero() {
               alt="TrenchersAI trading dashboard"
               width={1200}
               height={700}
-              className="w-full h-auto block"
+              className="block"
+              style={{ width: '100%', height: 'auto' }}
               priority
             />
           </div>

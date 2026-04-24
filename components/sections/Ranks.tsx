@@ -57,6 +57,7 @@ export default function Ranks() {
       id="ranks" 
       ref={containerRef}
       className="relative w-full py-32 bg-black overflow-hidden border-t border-white/[0.04]"
+      style={{ position: 'relative' }}
     >
       {/* Ambient background lines to give a grid/trench feel */}
       <div className="absolute inset-0 hero-grid opacity-30 pointer-events-none" />
@@ -84,7 +85,7 @@ export default function Ranks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-base text-white/40 max-w-md md:text-right border-l md:border-l-0 md:border-r border-white/[0.1] pl-6 md:pl-0 md:pr-6"
+            className="text-sm md:text-base text-white/60 max-w-md md:text-right border-l md:border-l-0 md:border-r border-white/[0.1] pl-6 md:pl-0 md:pr-6"
           >
             Every swap earns you Gold. Higher rank = bigger multiplier on everything you earn. Plus 5-tier referral commissions on every trade your network makes.
           </motion.p>
@@ -139,7 +140,7 @@ export default function Ranks() {
                     <h3 className="text-2xl font-extrabold uppercase tracking-tight text-white mb-4">
                       {tier.name}
                     </h3>
-                    <p className="text-sm text-white/40 leading-relaxed">
+                    <p className="text-sm text-white/60 leading-relaxed">
                       {tier.description}
                     </p>
                   </div>

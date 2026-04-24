@@ -53,7 +53,7 @@ export default function Overview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-base md:text-lg text-white/40 max-w-2xl mx-auto"
+            className="text-base md:text-lg text-white/60 max-w-2xl mx-auto"
           >
             Harness cutting-edge technology built to the highest industry
             standard, setting a new benchmark for modern trading.
@@ -94,7 +94,7 @@ export default function Overview() {
                       {card.title}
                     </h3>
 
-                    <p className="text-sm md:text-base text-white/40 leading-relaxed mb-10">
+                    <p className="text-sm md:text-base text-white/60 leading-relaxed mb-10">
                       {card.description}
                     </p>
 
@@ -124,7 +124,8 @@ export default function Overview() {
                         alt={card.title}
                         width={600}
                         height={600}
-                        className="w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+                        className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+                        style={{ width: '100%', height: 'auto' }}
                       />
                     </motion.div>
                   </div>

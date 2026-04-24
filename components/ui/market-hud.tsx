@@ -60,9 +60,9 @@ const SecurityScan = () => (
       </div>
     </div>
     <motion.div 
-      animate={{ top: ['0%', '100%', '0%'] }}
+      animate={{ translateY: ['0%', '400%', '0%'] }}
       transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-      className="absolute left-0 right-0 h-px bg-brand/30 shadow-[0_0_10px_rgba(119,51,255,0.5)] pointer-events-none"
+      className="absolute left-0 top-0 right-0 h-px bg-brand/30 shadow-[0_0_10px_rgba(119,51,255,0.5)] pointer-events-none"
     />
   </div>
 );

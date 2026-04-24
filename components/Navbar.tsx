@@ -58,6 +58,7 @@ export default function Navbar() {
             alt="TrenchersAI logo"
             width={28}
             height={28}
+            style={{ width: 'auto', height: 'auto' }}
           />
           <span className="font-bold text-[15px] text-white tracking-tight">
             TrenchersAI

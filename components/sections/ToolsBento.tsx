@@ -148,7 +148,7 @@ function BentoCard({ feature, idx }: { feature: FeatureWithIcon; idx: number }) 
         <h3 className="text-xl md:text-2xl font-extrabold uppercase tracking-tight text-white mb-3">
           {feature.title}
         </h3>
-        <p className="text-sm text-white/40 leading-relaxed mb-8 flex-grow">
+        <p className="text-sm text-white/60 leading-relaxed mb-8 flex-grow">
           {feature.description}
         </p>
 
@@ -188,7 +188,7 @@ export default function ToolsBento() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-sm md:text-base text-white/40 max-w-2xl mx-auto"
+            className="text-sm md:text-base text-white/60 max-w-2xl mx-auto"
           >
             Everything you need to trade Solana memecoins with speed, safety,
             and an edge, nothing you don&apos;t.

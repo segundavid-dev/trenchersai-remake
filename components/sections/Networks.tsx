@@ -57,7 +57,8 @@ export default function Networks() {
                   alt={`${net.name} logo`}
                   width={120}
                   height={net.height}
-                  className="w-auto h-full object-contain"
+                  className="h-full object-contain"
+                  style={{ width: 'auto', height: 'auto' }}
                 />
               </div>
             </motion.div>
