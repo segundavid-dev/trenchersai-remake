@@ -55,7 +55,6 @@ export default function Hero() {
       id="hero"
       ref={containerRef}
       className="relative w-full min-h-screen overflow-hidden bg-black flex flex-col"
-      style={{ position: 'relative' }}
     >
       {/* Background composition */}
       <div className="pointer-events-none absolute inset-0 hero-grid" />
@@ -148,8 +147,7 @@ export default function Hero() {
               alt="TrenchersAI trading dashboard"
               width={1200}
               height={700}
-              className="block"
-              style={{ width: '100%', height: 'auto' }}
+              className="w-full h-auto block"
               priority
             />
           </div>
