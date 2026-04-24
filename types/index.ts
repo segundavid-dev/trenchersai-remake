@@ -1,17 +1,17 @@
-/** Navigation link used in Navbar and footer. */
+/* Navigation link  */
 export interface NavLink {
   label: string;
   href: string;
 }
 
-/** Key metric displayed in the hero stats strip. */
+/* Key metric */
 export interface Stat {
   value: string;
   label: string;
 }
 
-/** Card data used in the Overview scrolling stack. */
-export interface OverviewCard {
+/* Card data */
+export interface OverviewCard { 
   id: number;
   pills: string[];
   title: string;
@@ -19,20 +19,40 @@ export interface OverviewCard {
   image: string;
 }
 
-/** Data for a feature in the bento grid. */
+/* bento grid */
 export interface BentoFeature {
   id: string;
   title: string;
   description: string;
   stats: string[];
-  className: string;
 }
 
-/** Rank tier progression data. */
+/* Rank tier progression data. */
 export interface RankTier {
   id: number;
   name: string;
   description: string;
-  accent: string;
-  glow: string;
+}
+
+/* Single log entry for the terminal feed. */
+export interface LogEntry {
+  id: string;
+  action: string;
+  address: string;
+  amount: string;
+  time: string;
+  status: "success" | "pending";
+}
+
+export interface OrderBookItem {
+  width: number;
+  price: string;
+  side: 'buy' | 'sell';
+}
+
+export interface MarketTickerData {
+  pair: string;
+  change: string;
+  isPositive: boolean;
+  isSignal?: boolean;
 }

@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "motion/react";
 
 interface RotatingTextProps {
   words: string[];
-  /** Milliseconds between word transitions. */
   interval?: number;
   className?: string;
 }

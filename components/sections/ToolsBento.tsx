@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { motion } from "motion/react";
 import type { BentoFeature } from "@/types";
 import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react";
@@ -20,64 +21,56 @@ const features: FeatureWithIcon[] = [
   {
     id: "ai-sniper",
     title: "AI Sniper Bot",
-    description:
-      "Set your parameters, min liquidity, max dev hold, LP burned, mint revoked and let the bot snipe, filter, and buy for you automatically. 15+ filters. Runs 24/7.",
+    description: "Set your parameters, min liquidity, max dev hold, LP burned, mint revoked and let the bot snipe, filter, and buy for you automatically. 15+ filters. Runs 24/7.",
     stats: ["1-Click Setup", "100+ Strategies"],
-    className: "col-span-1 md:col-span-2 md:row-span-2",
     icon: Robot01Icon,
   },
   {
     id: "rug-detection",
     title: "Rug Detection",
-    description:
-      "Every token gets a security score before you buy. Checks mint authority, LP burn, top holders, and runs honeypot simulation.",
+    description: "Every token gets a security score before you buy. Checks mint authority, LP burn, top holders, and runs honeypot simulation.",
     stats: ["3x Faster Transfers", "24/7 Availability"],
-    className: "col-span-1 md:col-span-1 md:row-span-2",
     icon: Shield01Icon,
   },
   {
     id: "multi-wallet",
     title: "Multi-Wallet",
-    description:
-      "Create embedded wallets or import existing ones. AES-256 encrypted. Switch between wallets instantly. Export anytime.",
+    description: "Create embedded wallets or import existing ones. AES-256 encrypted. Switch between wallets instantly. Export anytime.",
     stats: ["30% Savings", "50+ Countries"],
-    className: "col-span-1 md:col-span-1 md:row-span-1",
     icon: Wallet01Icon,
   },
   {
     id: "self-custody",
     title: "Self-Custody",
-    description:
-      "Your private key never leaves your browser. We store encrypted blobs. We don't have the key. We literally can't access your funds.",
+    description: "Your private key never leaves your browser. We store encrypted blobs. We don't have the key. We literally can't access your funds.",
     stats: ["24/7 Monitoring", "2FA Enabled"],
-    className: "col-span-1 md:col-span-1 md:row-span-1",
     icon: LockKeyIcon,
   },
   {
     id: "advanced-orders",
     title: "Advanced Orders",
-    description:
-      "Limit orders, stop-loss, multi-level take-profit, trailing stops, and DCA. Set once, they run 24/7.",
+    description: "Limit orders, stop-loss, multi-level take-profit, trailing stops, and DCA. Set once, they run 24/7.",
     stats: ["99% Accuracy", "10M+ Signals"],
-    className: "col-span-1 md:col-span-2 md:row-span-1",
     icon: ChartAverageIcon,
   },
   {
     id: "realtime-alerts",
     title: "Real-time alerts",
-    description:
-      "Price alerts, wallet activity notifications, new token matches, and portfolio drawdown warnings, pushed instantly",
+    description: "Price alerts, wallet activity notifications, new token matches, and portfolio drawdown warnings, pushed instantly",
     stats: ["500+ Assets", "24/7 Signals"],
-    className: "col-span-1 md:col-span-2 md:row-span-1",
     icon: BellDotIcon,
   },
 ];
 
-
-
-import { useRef, useState } from "react";
-
-// ... features array remains the same
+const getGridSpan = (idx: number) => {
+  switch (idx) {
+    case 0: return "md:col-span-2 md:row-span-2";
+    case 1: return "md:col-span-1 md:row-span-2";
+    case 4:
+    case 5: return "md:col-span-2 md:row-span-1";
+    default: return "md:col-span-1 md:row-span-1";
+  }
+};
 
 function BentoCard({ feature, idx }: { feature: FeatureWithIcon; idx: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -121,9 +114,9 @@ function BentoCard({ feature, idx }: { feature: FeatureWithIcon; idx: number }) 
       }}
       whileHover="hover"
       style={{ transformStyle: "preserve-3d" }}
-      className={`group relative overflow-hidden bg-[#050505] border border-white/[0.04] p-8 flex flex-col transition-all duration-500 hover:border-brand/40 ${feature.className}`}
+      className={`group relative overflow-hidden bg-[#050505] border border-white/[0.04] p-8 flex flex-col transition-all duration-500 hover:border-brand/40 col-span-1 ${getGridSpan(idx)}`}
     >
-      {/* ── Interactive Spotlight ── */}
+      {/* Interactive Spotlight */}
       <div 
         className="absolute inset-0 z-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100 pointer-events-none"
         style={{

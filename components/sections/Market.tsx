@@ -12,7 +12,7 @@ export default function Market() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16 md:gap-20">
         
-        {/* Left: Content (55%) */}
+        {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -33,7 +33,7 @@ export default function Market() {
           </Button>
         </motion.div>
 
-        {/* Right: Tactical HUD (45%) */}
+        {/* Right Tactical HUD  */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -43,12 +43,12 @@ export default function Market() {
         >
           <div className="dashboard-border p-px shadow-2xl shadow-black relative group">
             
-            {/* The HUD Wrapper */}
+            {/* HUD Wrapper */}
             <div className="relative w-full h-[300px] md:h-[480px] overflow-hidden bg-black">
               <MarketHUD />
             </div>
 
-            {/* Corner Accents for Sharp UI */}
+            {/* Corner Accents  */}
             <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-brand/50 z-20"></div>
             <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-brand/50 z-20"></div>
           </div>

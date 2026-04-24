@@ -51,7 +51,7 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* ── Logo ── */}
+        {/* Logo */}
         <a href="/" className="flex items-center gap-3 group">
           <Image
             src="/logo.avif"
@@ -64,7 +64,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* ── Desktop nav links ── */}
+        {/* Desktop nav links */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map(({ label, href }) => (
             <a
@@ -79,14 +79,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* ── Enroll CTA (desktop) ── */}
+        {/* Enroll CTA*/}
         <div className="hidden md:block">
           <Button href="/contact" variant="primary" size="sm">
             Join Now
           </Button>
         </div>
 
-        {/* ── Mobile hamburger ── */}
+        {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
           className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer z-50"
@@ -111,7 +111,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* ── Mobile menu panel ── */}
+      {/* Mobile menu panel */}
       <div
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300 ease-out",

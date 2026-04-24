@@ -3,7 +3,6 @@
 import { HugeiconsIcon } from "@hugeicons/react";
 import { NewTwitterIcon, Linkedin02Icon } from "@hugeicons/core-free-icons";
 import { Magnetic } from "@/components/ui/magnetic";
-import { motion } from "motion/react";
 
 export default function Footer() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -24,7 +23,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto relative z-10 flex flex-col gap-16">
         
-        {/* Top Section: Logo & Links */}
+        {/* Logo & Links */}
         <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24">
           
           {/* Brand Info */}
@@ -77,7 +76,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section: Copyright & Socials */}
+        {/* Copyright & Socials */}
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6 pt-8 border-t border-white/[0.04]">
           <p className="text-xs text-white/30 tracking-wide">
             © Copyright 2025 TrenchersAI - All rights reserved.

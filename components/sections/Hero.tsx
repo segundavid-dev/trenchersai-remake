@@ -9,7 +9,7 @@ import { RotatingText } from "@/components/ui/rotating-text";
 import { Magnetic } from "@/components/ui/magnetic";
 import { TerminalFeed } from "@/components/ui/terminal-feed";
 
-/* ── Animation variants ── */
+/* Animation variants */
 
 const stagger: Variants = {
   hidden: {},
@@ -35,9 +35,9 @@ const scaleIn: Variants = {
   },
 };
 
-const heroWords = ["whales", "degens", "snipers", "alphas"];
+import { HERO_WORDS } from "@/lib/constants";
 
-/* ── Component ── */
+/* Component */
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -93,7 +93,7 @@ export default function Hero() {
           Trade like the
           <br />
           <RotatingText
-            words={heroWords}
+            words={HERO_WORDS}
             interval={2400}
             className="text-brand"
           />{" "}
@@ -105,7 +105,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mt-7 text-base sm:text-lg text-white/30 max-w-md leading-relaxed"
         >
-          The terminal that doesn&apos;t sleep. Snipe launches, copy wallets,
+          The terminal that doesn't sleep. Snipe launches, copy wallets,
           and track every position, all in one place.
         </motion.p>
 

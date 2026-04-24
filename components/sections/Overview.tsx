@@ -109,7 +109,7 @@ export default function Overview() {
 
                   {/* Right Image */}
                   <div className="w-full md:w-1/2 relative bg-black/40 border-l border-white/[0.04] flex items-center justify-center p-8 md:p-12 overflow-hidden">
-                    {/* Subtle scanline/gradient effect in the image background */}
+                    {/* Subtle gradient effect in the image background */}
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(119,51,255,0.1)_0%,transparent_70%)] pointer-events-none" />
                     
                     <motion.div

@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 
@@ -11,7 +12,7 @@ export default function ContactPage() {
       <Navbar />
 
       <section className="relative flex-grow flex flex-col items-center justify-center pt-32 pb-24 px-6 overflow-hidden">
-        {/* Ambient tactical grid */}
+  
         <div className="absolute inset-0 hero-grid opacity-20 pointer-events-none" />
         
         {/* Glow */}
@@ -23,7 +24,7 @@ export default function ContactPage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 w-full max-w-lg"
         >
-          {/* Cardboard/Dashboard Container */}
+
           <div className="dashboard-border p-px shadow-[0_0_40px_rgba(119,51,255,0.1)]">
             <div className="relative bg-[#030303] scan-line-effect p-8 md:p-12 border border-white/[0.02]">
               
@@ -43,7 +44,7 @@ export default function ContactPage() {
 
               <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
                 
-                {/* Square Inputs */}
+                {/* Inputs */}
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="email" className="text-[11px] font-bold uppercase tracking-wider text-white/60 pl-1">
                     Email Address

@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import type { ReactNode, ButtonHTMLAttributes } from "react";
 
-/* ── Variants ── */
+/* Variants */
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 font-semibold cursor-pointer select-none transition-all duration-200 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed",
@@ -30,7 +30,7 @@ const buttonVariants = cva(
   }
 );
 
-/* ── Types ── */
+/* Types */
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
@@ -40,7 +40,7 @@ interface ButtonProps
   children: ReactNode;
 }
 
-/* ── Component ── */
+/* Component */
 
 export function Button({
   className,

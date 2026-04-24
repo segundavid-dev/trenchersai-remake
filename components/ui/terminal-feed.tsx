@@ -2,34 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-
-interface LogEntry {
-  id: string;
-  action: string;
-  address: string;
-  amount: string;
-  time: string;
-  status: "success" | "pending";
-}
-
-const ACTIONS = ["BUY", "SELL", "SNIPE", "SWAP", "MINT"];
-const ADDRESSES = [
-  "7xKX...2pQn",
-  "39wj...Lm9v",
-  "8zNf...Kp1x",
-  "2qRx...9zLk",
-  "5vPn...4mWx",
-  "F6nP...8xQr",
-];
-
-const generateLog = (): LogEntry => ({
-  id: Math.random().toString(36).substr(2, 9),
-  action: ACTIONS[Math.floor(Math.random() * ACTIONS.length)],
-  address: ADDRESSES[Math.floor(Math.random() * ADDRESSES.length)],
-  amount: (Math.random() * 10).toFixed(2) + " SOL",
-  time: new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-  status: Math.random() > 0.1 ? "success" : "pending",
-});
+import { type LogEntry } from "@/types";
+import { generateLog } from "@/lib/utils";
 
 export function TerminalFeed() {
   const [isMounted, setIsMounted] = useState(false);
